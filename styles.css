@@ -1,0 +1,175 @@
+/* ============================================================
+   ECOMMERCE EXPO — page personality
+   Energetic · commerce momentum · modular. Light, kinetic,
+   sans-led — the dynamic sibling of Retail Legends, still
+   unmistakably SEN (navy / terracotta / warm off-white).
+   ============================================================ */
+
+:root {
+  --accent: var(--terracotta);
+  --accent-d: var(--terracotta-d);
+}
+
+.lead { font-size: 1.08rem; color: var(--ink); max-width: 62ch; }
+
+/* ---------------- Hero (light, kinetic) ---------------- */
+.xhero {
+  position: relative;
+  background:
+    linear-gradient(180deg, rgba(184,115,80,.07), transparent 55%),
+    var(--cream);
+  padding: 84px 0 0;
+  overflow: hidden;
+}
+.xhero__stripes {
+  position: absolute; inset: -40% -10% auto auto; width: 70%; height: 150%;
+  background:
+    repeating-linear-gradient(115deg,
+      transparent 0 46px,
+      rgba(25,25,36,.045) 46px 48px);
+  transform: translateX(18%);
+  pointer-events: none;
+}
+.xhero__inner { position: relative; display: flex; flex-direction: column; align-items: flex-start; gap: 18px; padding-bottom: 64px; }
+.xhero__title {
+  font-family: var(--font-sans);
+  font-weight: 800;
+  font-size: clamp(2.3rem, 8vw, 4.3rem);
+  letter-spacing: -.02em;
+  color: var(--navy);
+  line-height: 1.02;
+}
+.xhero__at {
+  font-family: var(--font-serif); font-style: italic; font-weight: 500;
+  color: var(--terracotta); letter-spacing: 0;
+}
+.xhero__chips { display: flex; flex-wrap: wrap; gap: 10px; }
+.chip {
+  display: inline-block; font-size: .85rem; font-weight: 700;
+  background: var(--navy); color: var(--offwhite);
+  border-radius: 999px; padding: 7px 16px;
+}
+.chip--soft { background: transparent; color: var(--navy); border: 1.5px solid rgba(25,25,36,.25); font-weight: 600; }
+.xhero__lead { font-size: 1.08rem; color: var(--ink); max-width: 56ch; }
+.xhero__ctas { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 4px; }
+
+/* ---------------- Theme ticker ---------------- */
+.ticker {
+  position: relative;
+  background: var(--navy);
+  color: var(--muted-light);
+  overflow: hidden;
+  padding: 12px 0;
+  border-block: 1px solid var(--navy-line);
+}
+.ticker__track {
+  display: inline-flex; gap: 44px; white-space: nowrap;
+  animation: ticker 36s linear infinite;
+  will-change: transform;
+}
+.ticker__track span { font-size: .85rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
+.ticker__track span::after { content: "\2726"; margin-left: 44px; color: var(--terracotta); }
+@keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) { .ticker__track { animation: none; } }
+
+/* ---------------- Stats band ---------------- */
+.statsband { background: var(--navy); color: var(--offwhite); padding-block: 56px; }
+.stats { display: grid; grid-template-columns: 1fr 1fr; gap: 28px 16px; text-align: center; }
+@media (min-width: 860px) { .stats { grid-template-columns: repeat(4, 1fr); } }
+.stat { display: flex; flex-direction: column; gap: 6px; }
+.stat__num {
+  font-family: var(--font-sans); font-weight: 800;
+  font-size: clamp(2rem, 6vw, 2.9rem); letter-spacing: -.02em;
+  color: var(--terracotta);
+  font-variant-numeric: tabular-nums;
+}
+.stat__label { font-size: .88rem; color: var(--muted-light); max-width: 22ch; margin-inline: auto; }
+
+/* ---------------- Ways to find SEN ---------------- */
+.waygrid { display: grid; gap: 14px; margin-top: 10px; }
+@media (min-width: 640px) { .waygrid { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 980px) { .waygrid { grid-template-columns: repeat(4, 1fr); } }
+.way {
+  background: var(--white);
+  border: 1px solid rgba(25,25,36,.08);
+  border-left: 3px solid var(--terracotta);
+  border-radius: var(--radius);
+  padding: 22px 20px;
+  box-shadow: var(--shadow-sm);
+  transition: transform .18s ease, box-shadow .22s ease;
+}
+.way:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
+.way__title { font-weight: 800; font-size: 1.02rem; color: var(--navy); margin-bottom: 6px; }
+.way__body { color: var(--muted); font-size: .92rem; }
+
+/* ---------------- Panel spotlight ---------------- */
+.panelcard {
+  background: var(--white);
+  border: 1px solid rgba(25,25,36,.1);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 30px 26px;
+  display: grid; gap: 18px;
+}
+@media (min-width: 860px) { .panelcard { grid-template-columns: 1.2fr 1fr; padding: 38px 36px; } }
+.panelcard__when {
+  display: inline-flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px;
+}
+.panelcard__title { font-family: var(--font-serif); font-weight: 600; font-size: clamp(1.25rem, 3.4vw, 1.7rem); color: var(--navy); }
+.panelcard__subtitle { color: var(--terracotta-d); font-weight: 600; margin-top: 6px; }
+.panelcard__people { display: grid; gap: 10px; align-content: start; }
+.pperson { display: flex; align-items: baseline; gap: 10px; font-size: .93rem; flex-wrap: wrap; }
+.pperson__role {
+  flex: none; font-size: .68rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--terracotta-d);
+  background: color-mix(in srgb, var(--terracotta) 12%, transparent);
+  border-radius: 999px; padding: 3px 10px;
+}
+.pperson__name { font-weight: 700; color: var(--navy); }
+.pperson__org { color: var(--muted); }
+/* Teaser mode — descriptive copy + agenda link, no listing */
+.panelcard--teaser { grid-template-columns: 1fr; max-width: 720px; }
+.panelcard__desc { color: var(--muted); margin-top: 14px; max-width: 58ch; }
+.panelcard__cta { margin-top: 20px; }
+
+/* ---------------- Happy hour module ---------------- */
+.hhcard {
+  position: relative;
+  background: linear-gradient(150deg, var(--navy) 0%, #2c2740 100%);
+  color: var(--offwhite);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lg);
+  padding: 38px 28px;
+  overflow: hidden;
+  display: grid; gap: 14px;
+  text-align: center; justify-items: center;
+}
+@media (min-width: 760px) { .hhcard { padding: 48px 56px; } }
+.hhcard::before {
+  content: ""; position: absolute; inset: auto -30% -70% -30%; height: 260px;
+  background: radial-gradient(55% 100% at 50% 100%, rgba(184,115,80,.4), transparent 70%);
+  pointer-events: none;
+}
+.hhcard > * { position: relative; }
+.hhcard__eyebrow { color: color-mix(in srgb, var(--terracotta) 85%, #fff); font-size: .78rem; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; }
+.hhcard__title { font-family: var(--font-serif); font-weight: 600; font-size: clamp(1.5rem, 4.5vw, 2.1rem); }
+.hhcard__meta { display: flex; flex-wrap: wrap; gap: 8px 18px; justify-content: center; font-weight: 600; font-size: .95rem; }
+.hhcard__meta .dot { color: var(--terracotta); }
+.hhcard__blurb { color: var(--muted-light); max-width: 54ch; }
+
+/* ---------------- Sponsor band ---------------- */
+.sponsorband {
+  background: linear-gradient(160deg, var(--terracotta) 0%, var(--terracotta-d) 100%);
+  color: var(--white);
+  text-align: center;
+  padding: 76px 0;
+}
+.sponsorband .eyebrow--light { color: rgba(255,255,255,.85); }
+.sponsorband__title { font-family: var(--font-serif); font-weight: 600; font-size: clamp(1.6rem, 4.5vw, 2.2rem); margin: 8px 0 14px; }
+.sponsorband__msg { color: rgba(255,255,255,.92); max-width: 54ch; margin: 0 auto 26px; }
+.btn--alt { background: var(--offwhite); color: var(--navy); box-shadow: 0 6px 18px rgba(0,0,0,.25); }
+.btn--alt:hover { background: #fff; transform: translateY(-1px); box-shadow: 0 10px 26px rgba(0,0,0,.3); }
+
+/* Exec cards slightly more compact on this page */
+.execcard { flex-basis: 224px; }
+
