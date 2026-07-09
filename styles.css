@@ -61,25 +61,6 @@
 .xhero__lead { font-size: 1.08rem; color: var(--ink); max-width: 56ch; }
 .xhero__ctas { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 4px; }
 
-/* ---------------- Theme ticker ---------------- */
-.ticker {
-  position: relative;
-  background: var(--navy);
-  color: var(--muted-light);
-  overflow: hidden;
-  padding: 12px 0;
-  border-block: 1px solid var(--navy-line);
-}
-.ticker__track {
-  display: inline-flex; gap: 44px; white-space: nowrap;
-  animation: ticker 36s linear infinite;
-  will-change: transform;
-}
-.ticker__track span { font-size: .85rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
-.ticker__track span::after { content: "\2726"; margin-left: 44px; color: var(--terracotta); }
-@keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-@media (prefers-reduced-motion: reduce) { .ticker__track { animation: none; } }
-
 /* ---------------- Stats band ---------------- */
 .statsband { background: var(--navy); color: var(--offwhite); padding-block: 56px; }
 .stats { display: grid; grid-template-columns: 1fr 1fr; gap: 28px 16px; text-align: center; }

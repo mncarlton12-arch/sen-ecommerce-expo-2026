@@ -11,10 +11,6 @@
   const overview = document.getElementById("overview-copy");
   if (overview) overview.textContent = X.overview;
 
-  /* Duplicate ticker content so the loop is seamless */
-  const ticker = document.getElementById("ticker-track");
-  if (ticker) ticker.innerHTML += ticker.innerHTML;
-
   /* Panel spotlight — descriptive by default; the full listing (names, slot,
      stage) renders only when config sets panel.published = true. */
   const panel = document.getElementById("panelcard");
