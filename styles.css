@@ -50,6 +50,14 @@
   border-radius: 999px; padding: 7px 16px;
 }
 .chip--soft { background: transparent; color: var(--navy); border: 1.5px solid rgba(25,25,36,.25); font-weight: 600; }
+.chip--accent {
+  background: var(--terracotta); color: var(--white);
+  transition: background .2s ease, transform .15s ease;
+}
+.chip--accent:hover { background: var(--terracotta-d); transform: translateY(-1px); }
+
+/* Delegation as the first content block under the hero */
+.section--execs { padding-top: 48px; }
 .xhero__lead { font-size: 1.08rem; color: var(--ink); max-width: 56ch; }
 .xhero__ctas { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 4px; }
 
