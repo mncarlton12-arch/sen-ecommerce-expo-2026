@@ -40,7 +40,9 @@ window.SEN_CONFIG = {
      Final CTAs are on hold — these are the practical, editable defaults.   */
   ctas: {
     visitSen:            { label: "Visit SEN",               url: "https://www.socialexec.co/" },
-    sponsor:             { label: "Sponsor Opportunities",   url: "mailto:partnerships@socialexecutivenetwork.com?subject=SEN%20Sponsor%20Opportunities" },
+    // Sponsor inquiries route to the SEN website's partnerships page
+    // (sponsor tiers + inquiry CTAs). Updated from the mailto per Maria, July 12.
+    sponsor:             { label: "Sponsor Opportunities",   url: "https://www.socialexec.co/partnerships" },
     retailLegendsLuma:   { label: "Retail Legends on Luma",  url: "https://luma.com/96gvc9ig" },
     expoInfo:            { label: "eCommerce Expo Event Info", url: "https://www.ecommerceexpo.co.uk/" },
     // TODO: Happy hour Luma page not created yet (internally: "Luma TBD").
@@ -58,22 +60,28 @@ window.SEN_CONFIG = {
     fullTitle: "Retail Legends: An Evening with the Architects of Modern Retail",
     theme: "Where Legends Share, Leaders Inspire.",
     date: "September 15, 2026",
-    time: "5:30 – 9:00 PM", // confirmed by Maria, July 8 2026 (matches the previously published hub)
+    time: "6:00 – 9:00 PM", // updated by Maria, July 12 2026 (was 5:30–9:00)
     city: "New York City",
     venue: null, // TODO: venue not booked yet — page shows "Venue announced upon confirmation"
     lumaUrl: "https://luma.com/96gvc9ig",
     audience: "A curated room of senior retail and commerce executives",
     format: "Fireside conversation, then cocktails, hors d'oeuvres, networking and a book signing",
 
+    /* Featured speakers. CONFIRMED by Maria (July 8, re-confirmed July 12,
+       2026): Terry and Lew ONLY — even though some designer cards show a
+       third speaker, do NOT add one without her say-so. Each profile carries
+       the speaker's brand wordmark under the photo. */
     speakers: [
       {
         name: "Terry Lundgren",
         title: "Former Chairman & CEO",
         company: "Macy's, Inc.",
         status: "confirmed",
-        image: "assets/execs/terry-lundgren.png", // see assets/execs/SOURCES.md
+        image: "assets/execs/terry-lundgren-dark.png", // portrait-on-navy from the official event card; see assets/execs/SOURCES.md
         imageAlt: "Portrait of Terry Lundgren, former Chairman and CEO of Macy's, Inc.",
-        descriptor: "Led Macy's through its defining modern era.",
+        brandName: "Macy's",
+        brandLogo: "assets/brands/macys.svg",
+        bio: "Terry Lundgren led Macy's, Inc. as Chairman & CEO for more than a decade, steering the landmark merger of Federated and May Department Stores and shaping Macy's into America's flagship department store. He previously served as Chairman & CEO of Neiman Marcus and twice chaired the National Retail Federation.",
         link: null, // TODO: optional LinkedIn/company link
         source: "Recap doc: confirmed May 27 · name known · headshot verified (Speakers Associates)",
       },
@@ -84,23 +92,39 @@ window.SEN_CONFIG = {
         status: "confirmed",
         image: "assets/execs/lew-frankfort.jpg",
         imageAlt: "Portrait of Lew Frankfort, former Chairman and CEO of Coach",
-        descriptor: "Built Coach into a global house of modern luxury.",
+        brandName: "Coach",
+        brandLogo: "assets/brands/coach.svg",
+        bio: "Over more than three decades as Chairman & CEO, Lew Frankfort built Coach from a small family leather workshop into a global house of modern luxury — taking the company public in 2000 and authoring one of the most studied brand transformations in retail history.",
         link: null,
         source: "Recap doc: verbally confirmed (written confirmation pending via Mike Taylor) · name known — already public on the live retail-legends hub · headshot verified (lewfrankfort.com)",
       },
-      {
-        // Third speaker intentionally unnamed — proposed internally but NOT
-        // confirmed. Do not add a name here until confirmed with Terry/BB.
-        name: null,
-        title: "A Third Legend",
-        company: "Pending confirmation",
-        status: "tba",
-        image: null, // renders SEN-branded placeholder avatar
-        imageAlt: "SEN placeholder avatar — additional speaker pending confirmation",
-        descriptor: "Announcement coming soon.",
-        link: null,
-        source: "Recap doc: proposed only, NOT confirmed · name TBD (do not publish) · placeholder avatar",
-      },
+    ],
+
+    /* Brands in the Room — brands whose executives are attending.
+       List provided by Maria, July 8 2026 ("Flaherty" corrected to Faherty
+       July 12). `logo` null = elegant typographic wordmark fallback renders
+       instead; see assets/brands/SOURCES.md. */
+    brands: [
+      { name: "Macy's",                 logo: "assets/brands/macys.svg" },
+      { name: "Coach",                  logo: "assets/brands/coach.svg" },
+      { name: "Tarte Cosmetics",        logo: null }, // fetched file was a wrong mark — renders as wordmark until a verified logo lands
+      { name: "G-Star RAW",             logo: "assets/brands/g-star-raw.svg" },
+      { name: "Saatva",                 logo: null },
+      { name: "David Yurman",           logo: "assets/brands/david-yurman.svg" },
+      { name: "Bottega Veneta",         logo: null },
+      { name: "Under Armour",           logo: "assets/brands/under-armour.svg" },
+      { name: "Centric Brands",         logo: null },
+      { name: "Tapestry",               logo: "assets/brands/tapestry.svg" },
+      { name: "L'Oréal",                logo: null }, // fetched file was a map graphic, not the wordmark — renders as wordmark text until a verified logo lands
+      { name: "Faherty",                logo: "assets/brands/faherty.png" }, // confirmed by Maria July 12 ("Flaherty" was a misspelling)
+      { name: "Marriott International", logo: "assets/brands/marriott.svg" },
+      { name: "Chanel",                 logo: "assets/brands/chanel.svg" },
+      { name: "CVS",                    logo: "assets/brands/cvs.svg" },
+      { name: "Kering",                 logo: null },
+      { name: "Versace",                logo: "assets/brands/versace.svg" },
+      { name: "Brooklinen",             logo: null },
+      { name: "Steve Madden",           logo: null },
+      { name: "American Eagle",         logo: null },
     ],
 
     themes: [
